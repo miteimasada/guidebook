@@ -1,0 +1,19 @@
+<div class = 'posts-wrapper'>
+  <div class = 'posts-container'>
+    <div class = 'posts-content'>
+      <%= form_tag('/posts/create') do %>
+        <div class = 'form'>
+          <div class = 'form-title'>
+            <p>TITLE</p>
+            <textarea name = 'title'></textarea>
+          </div>
+          <div class = 'form-content'>
+            <p>CONTENT</p>
+            <textarea name = 'content'></textarea>
+          </div>
+            <input type="submit" value="投稿">
+        </div>
+      <%end%>
+    </div>
+  </div>
+</div>

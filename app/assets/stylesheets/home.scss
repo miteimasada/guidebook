@@ -1,3 +1,65 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.home-title{
+  width: 60%;
+  height: 600px;
+  margin:
+  0 auto;
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    font-weight: 900;
+    margin-bottom: 40px;
+  }
+
+  p{
+    font-size: 24px;
+    letter-spacing: 0.2em;
+  }
+}
+
+.home-index-wrapper{
+  padding-top: 40px;
+  background: #ddd;
+
+  p{
+    margin-bottom: 40px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .home-index-container{
+    background: #eee;
+    width: 60%;
+    height: 600px;
+    margin:0 auto;
+    border-radius: 2px;
+    letter-spacing: 0.1em;
+
+    .home-index{
+      padding: 30px;
+
+      .home-index-list{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #ddd;
+        height: 60px;
+
+        a{
+        color: #000;
+        text-decoration: none;
+        }
+
+        .created_at{
+          font-size: 12px;
+          color: #666;
+          border: none;
+        }
+      }
+    }
+  }
+}

@@ -1,2 +1,20 @@
-<h1>Home#top</h1>
-<p>Find me in app/views/home/top.html.erb</p>
+<div class= 'home-title'>
+  <h1>One for all.<br>All for one.</h1>
+  <p>TORISETSU は、あなたの初めてを記録・共有する為のサービスです。<br>初めて行くお店。初めて使うサービス。あらゆる初めてを共有し、誰かの初めての手助けをしましょう。</p>
+</div>
+
+<div class = 'home-index-wrapper'>
+  <div class = 'home-index-container'>
+    <div class = 'home-index'>
+      <p>新着記事</p>
+        <% @posts.each do |post|%>
+          <div class = 'home-index-list'>
+            <%= link_to( post.title,"/posts/#{post.id}") %>
+            <div class = 'created_at'>
+            <%= post.created_at.strftime('%Y/%m/%d') %>
+            </div>
+          </div>
+        <%end%>
+    </div>
+  </div>
+</div>

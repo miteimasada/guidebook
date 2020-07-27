@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Guidebook</title>
+    <title>初めてを共有・検索するサービス|TORISETSU</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', 'posts','home', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header>
+      <div class = nav>
+      <h1><%=link_to 'TORISETSU', '/' %></h1>
+      <ul>
+        <li><%=link_to '新規投稿', '/posts/new' %></li>
+        <li><%=link_to '新規登録', '#' %></li>
+        <li><%=link_to 'ログイン', '#' %></li>
+      </ul>
+      </div>
+    </header>
     <%= yield %>
   </body>
 </html>

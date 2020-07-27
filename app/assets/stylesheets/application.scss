@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p&family=Ranchers&display=swap');
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+    list-style: none;
+}
+
+
+body{
+  font-family: 'M PLUS 1p', sans-serif;
+  background: #e59;
+  font-size: 18px;
+
+  header{
+    background: #e59;
+    margin: 0 auto;
+
+    .nav{
+      width: 60%;
+      margin: 0 auto;
+      height: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    h1{
+      font-family: 'Ranchers', cursive;
+      font-size: 36px;
+      letter-spacing: 0.2em;
+
+      a{
+        text-decoration: none;
+        color: #eee;
+      }
+    }
+
+    ul{
+      display: flex;
+
+      li{
+        margin-left: 30px;
+        
+        a{
+          text-decoration: none;
+          color: #eee;
+        }
+      }
+    }
+  }
+}
