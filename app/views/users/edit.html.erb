@@ -8,7 +8,7 @@
         </div>
       <% end %>
 
-      <%= form_tag("/users/#{@user.id}/update") do %>
+      <%= form_tag("/users/#{@user.id}/update",{multipart: true}) do %>
         <div class = 'form'>
         <h1>編集</h1>
           <div class = 'form-title'>
@@ -18,6 +18,8 @@
           <div class = 'form-content'>
             <p>メールアドレス</p>
             <input name = 'email' value='<%= @user.email %>'>
+            <p>プロフィール画像</p>
+            <input name = 'image' type = 'file'>
             <p>プロフィール</p>
             <textarea name = 'profile'><%= @user.profile %></textarea>
           </div>

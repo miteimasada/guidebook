@@ -12,7 +12,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(name: params[:name], email: params[:email])
+    @user = User.new(
+      name: params[:name],
+      email: params[:email],
+      image_name: "default_user.jpg"
+    )
     if @user.save
       redirect_to("/users/#{@user.id}")
     else
@@ -29,10 +33,16 @@ class UsersController < ApplicationController
     @user.name = params[:name]
     @user.email = params[:email]
     @user.profile = params[:profile]
+    if params[:image]
+      @user.image_name = "#{@user.id}.jpg"
+      image = params[:image]
+      File.binwrite("public/user_images/#{@user.image_name}", image.read)
+    end
+
     if @user.save
       redirect_to("/users/#{@user.id}")
     else
-      render('users/edit')
+      render("users/edit")
     end
   end
 end

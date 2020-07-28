@@ -2,7 +2,10 @@
   <div class = 'container'>
     <div class = 'content'>
       <div class = 'show-title'>
-        <h1><%= @user.name %></h1>
+        <div class = 'user-name'>
+          <img src="<%= "/user_images/#{@user.image_name}" %>">
+          <h1><%= @user.name %></h1>
+        </div>
         <p>登録日：<%= @user.created_at.strftime('%Y/%m/%d') %></p>
       </div>
       <div class = 'show-text'>
