@@ -1,0 +1,12 @@
+<div class = 'home-index-wrapper'>
+  <div class = 'home-index-container'>
+    <div class = 'home-index'>
+      <p>ユーザー一覧</p>
+        <% @users.each do |user|%>
+          <div class = 'home-index-list'>
+            <%= link_to( user.name,"/users/#{user.id}") %>
+          </div>
+        <%end%>
+    </div>
+  </div>
+</div>

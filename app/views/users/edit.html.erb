@@ -1,21 +1,25 @@
 <div class = 'wrapper'>
   <div class = 'container'>
     <div class = 'content'>
-      <% @post.errors.full_messages.each do |message| %>
+
+      <% @user.errors.full_messages.each do |message| %>
         <div class="form-error">
           <%= message %>
         </div>
       <% end %>
-      <%= form_tag("/posts/#{@post.id}/update") do %>
+
+      <%= form_tag("/users/#{@user.id}/update") do %>
         <div class = 'form'>
         <h1>編集</h1>
           <div class = 'form-title'>
-            <p>TITLE</p>
-            <textarea name = 'title'><%= @post.title %></textarea>
+            <p>ユーザーネーム</p>
+            <input name = 'name' value='<%= @user.name %>'>
           </div>
           <div class = 'form-content'>
-            <p>CONTENT</p>
-            <textarea name = 'content'><%= @post.content %></textarea>
+            <p>メールアドレス</p>
+            <input name = 'email' value='<%= @user.email %>'>
+            <p>プロフィール</p>
+            <textarea name = 'profile'><%= @user.profile %></textarea>
           </div>
             <input type="submit" value="保存">
         </div>

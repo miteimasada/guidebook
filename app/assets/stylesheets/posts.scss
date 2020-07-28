@@ -1,15 +1,19 @@
-.posts-wrapper{
+.wrapper{
   background: #ddd;
   padding-top: 40px;
   padding-bottom: 40px;
 
-  .posts-container{
+  .container{
     background: #eee;
     width: 60%;
     margin: 0 auto;
 
-    .posts-content{
+    .content{
       padding: 40px;
+
+      .form-error{
+        color: red;
+      }
 
       .show-title{
         display: flex;
@@ -18,7 +22,7 @@
         margin-bottom: 40px;
 
         h1{
-          font-size: 60px;
+          font-size: 48px;
         }
 
         p{
@@ -49,9 +53,20 @@
       .form{
         display: flex;
         flex-direction: column;
+        h1{
+          margin-bottom: 20px;
+          font-size: 32px;
+        }
 
         .form-title{
           margin-bottom: 20px;
+
+          input{
+            width: 90%;
+            font-size: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+          }
 
           textarea{
             width: 90%;
@@ -64,6 +79,13 @@
 
         .form-content{
           margin-bottom: 20px;
+
+          input{
+            width: 90%;
+            font-size: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+          }
 
           textarea{
             width: 90%;

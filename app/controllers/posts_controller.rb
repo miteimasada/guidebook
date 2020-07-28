@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   end
 
   def new
+    @post = Post.new
   end
 
   def create
@@ -35,4 +36,5 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to('/')
   end
+
 end
