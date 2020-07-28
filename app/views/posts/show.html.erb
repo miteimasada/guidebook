@@ -3,10 +3,13 @@
     <div class = 'posts-content'>
       <div class = 'show-title'>
         <h1><%= @post.title %></h1>
-        <p>投稿日：<%= @post.created_at.strftime('%Y/%m/%d') %></p>
+        <p>更新日：<%= @post.created_at.strftime('%Y/%m/%d') %></p>
       </div>
       <div class = 'show-text'>
         <p><%= @post.content %></p>
+      </div>
+      <div class = 'show-menu'>
+        <%= link_to("編集", "/posts/#{@post.id}/edit") %>
       </div>
     </div>
   </div>
