@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   get 'posts/:id' => 'posts#show'
   post 'posts/:id/update' => 'posts#update'
+  post 'posts/:id/destroy' => 'posts#destroy'
   get '/' => 'home#top'
 
 end
