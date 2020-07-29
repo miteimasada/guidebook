@@ -7,9 +7,9 @@
           <%= message %>
         </div>
       <% end %>
-      
+
+      <%= form_tag('users/create') do %>
         <div class = 'form'>
-          <%= form_tag('users/create') do %>
             <h1>新規登録</h1>
             <div class = 'form-title'>
               <p>ユーザー名</p>
@@ -18,10 +18,14 @@
             <div class = 'form-content'>
               <p>メールアドレス</p>
               <input name = 'email'>
+              <p>パスワード</p>
+              <input name = 'password'>
             </div>
+            <div class = 'btn'>
               <input type="submit" value="新規登録">
-          <%end%>
+            </div>
         </div>
+      <%end%>
     </div>
   </div>
 </div>

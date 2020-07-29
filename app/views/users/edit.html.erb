@@ -10,7 +10,7 @@
 
       <%= form_tag("/users/#{@user.id}/update",{multipart: true}) do %>
         <div class = 'form'>
-        <h1>編集</h1>
+        <h1>ユーザー情報</h1>
           <div class = 'form-title'>
             <p>ユーザーネーム</p>
             <input name = 'name' value='<%= @user.name %>'>
@@ -18,12 +18,16 @@
           <div class = 'form-content'>
             <p>メールアドレス</p>
             <input name = 'email' value='<%= @user.email %>'>
+            <p>パスワード</p>
+            <input type = 'password' name = 'password' value='<%= @user.password %>'>
             <p>プロフィール画像</p>
             <input name = 'image' type = 'file'>
             <p>プロフィール</p>
             <textarea name = 'profile'><%= @user.profile %></textarea>
           </div>
+          <div class = btn>
             <input type="submit" value="保存">
+          </div>
         </div>
       <%end%>
     </div>
