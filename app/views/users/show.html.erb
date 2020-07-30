@@ -12,7 +12,9 @@
         <p><%= @user.profile %></p>
       </div>
       <div class = 'show-menu'>
-        <%= link_to("編集", "/users/#{@user.id}/edit") %>
+        <% if @user.id == @current_user.id %>
+          <%= link_to("編集", "/users/#{@user.id}/edit") %>
+        <%end%>
       </div>
     </div>
   </div>
