@@ -27,6 +27,10 @@ body{
   font-family: 'M PLUS 1p', sans-serif;
   background: #e59;
   font-size: 18px;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 60px;
+  box-sizing: border-box;
 
   header{
     background: #e59;
@@ -85,9 +89,12 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
     height: 60px;
     background: #333;
     color: #eee;
+    position: absolute;
+    bottom: 0;
   }
 }
 

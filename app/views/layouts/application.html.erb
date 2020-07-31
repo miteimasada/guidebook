@@ -21,7 +21,7 @@
                 <%= link_to(@current_user.name,"/users/#{@current_user.id}") %>
             </div>
             <li><%=link_to '新規投稿', '/posts/new' %></li>
-            <li><%=link_to 'ユーザー一覧', '/users/index' %></li>
+            <li><%=link_to '登録者一覧', '/users/index' %></li>
             <li><%=link_to 'ログアウト', '/logout', {method: :post} %></li>
           <% else %>
             <li><%=link_to '新規登録', '/signup' %></li>
