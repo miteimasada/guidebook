@@ -10,9 +10,34 @@
 
     .content{
       padding: 40px;
-      p{
-        border-bottom: 1px solid #ddd;
-        margin-bottom: 40px;
+      .post-user-date{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 60px;
+        .user-name{
+          display: flex;
+          align-items: center;
+          img{
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+            border-radius: 50%;
+          }
+          a{
+            color: #333;
+            text-decoration: none;
+          }
+          p{
+            font-size: 16px;
+          }
+        }
+        .created-at{
+          p{
+            font-size: 16px;
+            color: #666;
+          }
+        }
+
       }
 
       .user-index-list{
@@ -93,15 +118,13 @@
       }
 
       .form{
-        display: flex;
-        flex-direction: column;
         h1{
-          margin-bottom: 20px;
+          margin-bottom: 40px;
           font-size: 32px;
         }
 
         .form-title{
-          margin-bottom: 20px;
+          margin-bottom: 40px;
 
           input{
             width: 90%;
