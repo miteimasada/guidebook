@@ -2,7 +2,6 @@ class PostsController < ApplicationController
   before_action :authenticate_user,{only: [:new,:edit,:create,:update,:destroy]}
   before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
 
-
   def show
     @post = Post.find_by(id: params[:id])
     @user = @post.user

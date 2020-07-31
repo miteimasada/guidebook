@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user, {only: [:index, :show, :edit, :update]}
+  before_action :authenticate_user, {only: [:index,:edit, :update]}
   before_action :forbid_login_user, {only: [:new, :create, :login_form, :login]}
   before_action :ensure_correct_user, {only: [:edit, :update]}
 
@@ -20,6 +20,7 @@ class UsersController < ApplicationController
       name: params[:name],
       email: params[:email],
       password: params[:password],
+      profile: "よろしくお願いします。",
       image_name: "default_user.jpg"
     )
     if @user.save
@@ -40,7 +41,6 @@ class UsersController < ApplicationController
     @user.name = params[:name]
     @user.email = params[:email]
     @user.profile = params[:profile]
-    @user.password = params[:password]
     if params[:image]
       @user.image_name = "#{@user.id}.jpg"
       image = params[:image]

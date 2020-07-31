@@ -11,14 +11,18 @@
       <div class = 'show-text'>
         <p><%= @user.profile %></p>
       </div>
-      <div class = 'show-menu'>
-        <% if @user.id == @current_user.id %>
-          <%= link_to("編集", "/users/#{@user.id}/edit") %>
-        <%end%>
-      </div>
+      <%if @current_user != nil%>
+        <div class = 'show-menu'>
+          <% if @user.id == @current_user.id %>
+            <%= link_to("編集", "/users/#{@user.id}/edit") %>
+          <%end%>
+        </div>
+      <%end%>
       <ul class="user-tabs">
         <li class="active"><%= link_to("投稿一覧", "/users/#{@user.id}") %></li>
+        <%if @current_user != nil%>
         <li><%= link_to("お気に入り", "/users/#{@user.id}/likes") %></li>
+        <%end%>
       </ul>
       <% @user.posts.each do |post| %>
         <div class="posts-index-item">

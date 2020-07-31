@@ -11,6 +11,7 @@
       <%= form_tag('/users/create') do %>
         <div class = 'form'>
             <h1>新規登録</h1>
+            <p class = form-info>ユーザー登録をすると、記事の投稿やお気に入り登録等ができます。</p>
             <div class = 'form-title'>
               <p>ユーザー名</p>
               <input name="name" value="<%= @user.name %>">
@@ -21,6 +22,10 @@
               <p>パスワード</p>
               <input type="password" name="password" value="<%= @user.password %>">
             </div>
+            <p class = 'form-alert'>
+            ※メールアドレスとパスワードはログイン時に必要となります。<br>
+            ※パスワードの登録後の変更は出来ません。
+            </p>
             <div class = 'btn'>
               <input type="submit" value="新規登録">
             </div>
