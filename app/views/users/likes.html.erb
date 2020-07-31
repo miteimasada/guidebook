@@ -8,24 +8,39 @@
         </div>
         <p>登録日：<%= @user.created_at.strftime('%Y/%m/%d') %></p>
       </div>
+
       <div class = 'show-text'>
         <p><%= @user.profile %></p>
       </div>
+
       <div class = 'show-menu'>
         <% if @user.id == @current_user.id %>
           <%= link_to("編集", "/users/#{@user.id}/edit") %>
         <%end%>
       </div>
+
       <ul class="user-tabs">
-        <li class="active"><%= link_to("投稿一覧", "/users/#{@user.id}") %></li>
-        <li><%= link_to("お気に入り", "/users/#{@user.id}/likes") %></li>
+        <li><%= link_to("投稿一覧", "/users/#{@user.id}") %></li>
+        <li class="active"><%= link_to("お気に入り", "/users/#{@user.id}/likes") %></li>
       </ul>
-      <% @user.posts.each do |post| %>
+
+      <% @likes.each do |like| %>
+        <% post = Post.find_by(id: like.post_id) %>
+
         <div class="posts-index-item">
-            <li><%= link_to(post.title, "/posts/#{post.id}") %></li>
+          <div class="post-left">
+            <img src="<%= "/user_images/#{post.user.image_name}" %>">
+            <div class="post-user-name">
+              <%= link_to(post.user.name, "/users/#{post.user.id}") %>
+            </div>
+            <%= link_to(post.title, "/posts/#{post.id}") %>
+          </div>
+          <div class="post-right">
             <p>更新日：<%= post.created_at.strftime('%Y/%m/%d') %></p>
+          </div>
         </div>
       <% end %>
+
     </div>
   </div>
 </div>

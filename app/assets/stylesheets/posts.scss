@@ -10,6 +10,32 @@
 
     .content{
       padding: 40px;
+
+      .user-tabs{
+        display: flex;
+        overflow: hidden;
+        li{
+          margin-right: 20px;
+          a{
+            color: #333;
+            text-decoration: none;
+            color: #afb6bf;
+          }
+        }
+        .active{
+          border-bottom: 2px solid #e59;
+          a{
+            color: #57575f;
+          }
+        }
+      }
+
+      .like-btn{
+        color: #8899a6;
+      }.like-btn-unlike {
+        color: #ff2581;
+      }
+
       .post-user-date{
         display: flex;
         justify-content: space-between;
@@ -109,6 +135,7 @@
       .show-menu{
         text-align: right;
         margin-top: 40px;
+        margin-bottom: 60px;
         a{
         text-decoration: none;
         color: #666;
@@ -167,6 +194,35 @@
           input{
             width: 200px;
           }
+        }
+      }
+      .posts-index-item{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        border-bottom: 1px solid #ddd;
+        .post-left{
+          display: flex;
+
+          img{
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+            border-radius: 50%;
+          }
+
+          .post-user-name{
+            padding-right: 30px;
+          }
+        }
+        a{
+          text-decoration: none;
+          color: #333;
+        }
+        p{
+          color: #666;
+          font-size: 12px;
         }
       }
     }
