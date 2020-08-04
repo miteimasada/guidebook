@@ -1,82 +1,80 @@
-.home-title{
-  width: 60%;
-  height: 600px;
-  margin:0 auto;
-  color: #eee;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  h1{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 100px;
-    font-weight: 900;
-    margin-bottom: 40px;
-  }
-
-  p{
-    font-size: 24px;
-    letter-spacing: 0.2em;
-  }
-}
-
 .home-index-wrapper{
   padding-top: 40px;
   padding-bottom: 40px;
   background: #eee;
 
-  .home-index-title{
-    margin-bottom: 40px;
-    border-bottom: 1px solid #bbb;
-  }
-
   .home-index-container{
     display: grid;
-    grid-template-columns: 70% 1fr;
+    grid-template-columns:1fr 90%;
     margin:0 auto;
-    width: 60%;
-    border-radius: 2px;
+    width: 70%;
     letter-spacing: 0.1em;
 
+    .menu{
+      width: 84px;
+      margin-right: 20px;
+      &-list{
+        .active{
+          background: #e59;
+          a{
+            color: #eee;
+          }
+        }
+        li{
+          font-size: 14px;
+          padding: 5px 10px;
+          margin-bottom: 10px;
+          border-radius: 6px;
+          a{
+            text-decoration: none;
+            color: #666;
+          }
+        }
+      }
+    }
+
     .home-index{
-      margin-right: 100px;
 
-        &-list{
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          border-bottom: 1px solid #ddd;
-          height: 60px;
-          margin-bottom: 20px;
+      .home-index-title{
+        margin-bottom: 40px;
+        border-bottom: 1px solid #bbb;
+      }
 
-        .home-index-left{
-          display: flex;
-          align-items: center;
+      &-list{
+        display: grid;
+        grid-template-columns: 80% 1fr;
+        border-bottom: 1px solid #ddd;
+        min-height: 80px;
+        height: 100%;
+        margin-bottom: 20px;
+          &-left{
+            display: flex;
+            .home-index-img{
+              img{
+                width: 50px;
+                height: 50px;
+                object-fit: contain;
+                border-radius: 50%;
+                margin-right: 10px;
+              }
+            }
 
-          .home-index-img{
-            img{
-              width: 40px;
-              height: 40px;
-              object-fit: contain;
-              border-radius: 50%;
-              margin-right: 20px;
+            .home-index-text{
+              font-size: 16px;
+              padding-right: 20px;
+              p{
+                font-size: 12px;
+                color: #666;
+                margin-top: 5px;
+              }
             }
           }
 
-          .home-index-text{
-            p{
-              font-size: 12px;
-              color: #666;
-            }
-          }
 
           a{
           color: #000;
           text-decoration: none;
           }
-
-        }
 
         .created_at{
           font-size: 12px;
@@ -91,10 +89,97 @@
         }
       }
     }
+  }
+}
 
-    .likes-index{
-      p{
-        border-bottom: 1px solid #bbb;
+
+@media(max-width:480px){
+
+  .home-index-wrapper{
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    .home-index-container{
+      display: block;
+      width: 90%;
+      .menu{
+        width: 100%;
+        margin-bottom: 20px;
+        &-list{
+          display: flex;
+          li{
+            font-size: 12px;
+            text-align: center;
+            padding: 2px 2px;
+            margin-bottom: 10px;
+            border-radius: unset;
+            border: 1px solid #666;
+            width: 33%;
+            a{
+              text-decoration: none;
+              color: #666;
+            }
+          }
+            .active{
+              border: 1px solid #e59;
+            }
+        }
+      }
+
+      .home-index{
+        .home-index-title{
+          margin-bottom: 40px;
+        }
+
+        &-list{
+          display: block;
+          border-bottom: 1px solid #ddd;
+          min-height: 80px;
+          height: 100%;
+          margin-bottom: 20px;
+          &-left{
+            display: flex;
+            .home-index-img{
+              img{
+                width: 50px;
+                height: 50px;
+                object-fit: contain;
+                border-radius: 50%;
+                margin-right: 10px;
+              }
+            }
+
+            .home-index-text{
+              font-size: 16px;
+              padding-right: 20px;
+              p{
+                display: none;
+              }
+            }
+          }
+
+            a{
+            color: #000;
+            text-decoration: none;
+            }
+
+          .created_at{
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            color: #666;
+            border: none;
+            .home-likes{
+              margin-top: 0px;
+              margin-left: 10px;
+              display: flex;
+              align-items: center;
+              .like-btn-unlike {
+                color: #ff2581;
+              }
+            }
+          }
+        }
       }
     }
   }

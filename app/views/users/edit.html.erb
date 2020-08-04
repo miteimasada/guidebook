@@ -10,7 +10,7 @@
 
       <%= form_tag("/users/#{@user.id}/update",{multipart: true}) do %>
         <div class = 'form'>
-        <h1>ユーザー情報</h1>
+          <h1>ユーザー情報</h1>
           <div class = 'form-title'>
             <p>ユーザーネーム</p>
             <input name = 'name' value='<%= @user.name %>'>
@@ -23,7 +23,7 @@
             <p>プロフィール</p>
             <textarea name = 'profile'><%= @user.profile %></textarea>
           </div>
-          <div class = btn>
+          <div class = 'btn'>
             <input type="submit" value="保存">
           </div>
         </div>

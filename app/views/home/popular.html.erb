@@ -2,16 +2,15 @@
   <div class = 'home-index-container'>
     <div class = 'menu'>
       <div class = 'menu-list'>
-          <li class='active'><%= link_to( '新着','/') %></li>
-          <li><%= link_to( '人気記事','/popular') %></li>
-          <li><%= link_to( '人気タグ','#') %></li>
+        <li><%= link_to( '新着','/') %></li>
+        <li class='active'><%= link_to( '人気記事','/popular') %></li>
+        <li><%= link_to( '人気タグ','#') %></li>
       </div>
     </div>
 
     <div class = 'home-index'>
-      <p class = 'home-index-title'>新着記事</p>
-
-      <% @posts.each do |post|%>
+      <p class = 'home-index-title'>人気記事</p>
+      <% @all_ranks.each do |post|%>
         <%@likes_count = Like.where(post_id: post.id).count%>
         <div class = 'home-index-list'>
           <div class = 'home-index-list-left'>

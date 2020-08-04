@@ -4,6 +4,7 @@
     <title>初めてを共有・検索するサービス|TORISETSU</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
     <%= stylesheet_link_tag 'application', 'posts','home', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -13,22 +14,38 @@
   <body>
     <header>
       <div class = nav>
-        <h1><%=link_to 'TORISETSU', '/' %></h1>
-        <ul>
+        <%if @current_user%>
+        <div class = 'nav-top'>
+          <h1><%=link_to 'TORISETSU', '/' %></h1>
+          <div class = 'current-user'>
+            <img src= "<%= "/user_images/#{@current_user.image_name}" %>">
+            <%= link_to(@current_user.name,"/users/#{@current_user.id}") %>
+          </div>
+        </div>
+        <%end%>
           <%if @current_user%>
-            <div class = 'current-user'>
-                <img src= "<%= "/user_images/#{@current_user.image_name}" %>">
-                <%= link_to(@current_user.name,"/users/#{@current_user.id}") %>
-            </div>
-            <li><%=link_to '新規投稿', '/posts/new' %></li>
-            <li><%=link_to '登録者一覧', '/users/index' %></li>
-            <li><%=link_to 'ログアウト', '/logout', {method: :post} %></li>
-          <% else %>
-            <li><%=link_to '新規登録', '/signup' %></li>
-            <li><%=link_to 'ログイン', '/login' %></li>
+            <ul>
+              <li><%=link_to '新規投稿', '/posts/new' %></li>
+              <li><%=link_to '登録者一覧', '/users/index' %></li>
+              <li><%=link_to 'ログアウト', '/logout', {method: :post} %></li>
+            </ul>
           <%end%>
-        </ul>
+          <%if @current_user == nil%>
+            <h1 class = nav-title><%=link_to 'TORISETSU', '/' %></h1>
+            <ul>
+              <li><%=link_to '新規登録', '/signup' %></li>
+              <li><%=link_to 'ログイン', '/login' %></li>
+            </ul>
+          <%end%>
       </div>
+      <%if @current_user == nil%>
+        <div class= 'home-title'>
+          <h1>One for all.<br>All for one.</h1>
+          <p>TORISETSU は、あなたの初めてを記録・共有する為のサービスです。<br>初めて行くお店。初めて使うサービス。あらゆる初めてを共有し、誰かの初めての手助けをしましょう。</p>
+          <%# <h1>ここに一番伝えたいことを書く</h1>
+          <p>ここにはさーびすの簡単な説明を書く。<br>なるべく簡潔にどんなサービスを提供するのかを説明する。</p> %>
+        </div>
+      <%end%>
     </header>
 
     <% if flash[:notice] %>

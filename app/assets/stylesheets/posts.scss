@@ -1,16 +1,12 @@
 .wrapper{
-  background: #ddd;
   padding-top: 40px;
-  padding-bottom: 40px;
 
   .container{
     background: #eee;
-    width: 60%;
+    width: 70%;
     margin: 0 auto;
 
     .content{
-      padding: 40px;
-
       .user-tabs{
         display: flex;
         overflow: hidden;
@@ -164,13 +160,13 @@
         }
 
         .form-title{
-          margin-bottom: 40px;
 
           input{
             width: 90%;
             font-size: 20px;
             padding: 10px;
             border: 1px solid #ddd;
+            margin-bottom: 40px;
           }
 
           textarea{
@@ -179,6 +175,7 @@
             padding: 10px;
             resize: none;
             border: 1px solid #ddd;
+            margin-bottom: 40px;
           }
         }
 
@@ -218,6 +215,7 @@
         border-bottom: 1px solid #ddd;
         .post-left{
           display: flex;
+          align-items: center;
 
           img{
             width: 30px;
@@ -227,6 +225,8 @@
           }
 
           .post-user-name{
+            display: flex;
+            align-items: center;
             padding-right: 30px;
           }
         }
@@ -237,6 +237,232 @@
         p{
           color: #666;
           font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width:480px){
+  .wrapper{
+
+    .container{
+      background: #eee;
+      width: 90%;
+      margin: 0 auto;
+
+      .content{
+
+// ↓ユーザー詳細ページ
+        .user-tabs{
+          display: flex;
+          overflow: hidden;
+          li{
+            margin-right: 20px;
+            a{
+              color: #333;
+              text-decoration: none;
+              color: #afb6bf;
+            }
+          }
+          .active{
+            border-bottom: 2px solid #e59;
+            a{
+              color: #57575f;
+            }
+          }
+        }
+
+        .like-btn{
+          color: #8899a6;
+        }
+        .like-btn-unlike {
+          color: #ff2581;
+        }
+
+        .user-index-title{
+          margin-bottom: 20px;
+        }
+        .user-index-list{
+          display: flex;
+          align-items: center;
+          border-bottom: 1px solid #ddd;
+          height: 60px;
+          margin-bottom: 20px;
+
+          .user-left{
+            img{
+              width: 50px;
+              height: 50px;
+              object-fit: contain;
+              border-radius: 50%;
+              margin-right: 20px;
+            }
+          }
+
+          .user-right{
+            a{
+              color: #000;
+              text-decoration: none;
+            }
+          }
+        }
+
+// ↓投稿詳細ページ
+        .post-user-date{
+          display: block;
+          margin-bottom: 60px;
+          .user-name{
+            p{
+              font-size: 14px;
+            }
+          }
+          .created-at{
+            p{
+              font-size: 12px;
+            }
+          }
+        }
+
+        .show-title{
+          display: block;
+          border-bottom: 1px solid #ddd;
+          margin-bottom: 40px;
+
+          .user-name{
+            display: flex;
+            align-items: center;
+          }
+
+          img{
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            border-radius: 50%;
+            margin-right: 20px;
+          }
+
+          h1{
+            font-size: 24px;
+          }
+
+          p{
+            font-size: 12px;
+            color: #666;
+          }
+        }
+
+        .show-text{
+          font-size: 16px;
+          letter-spacing: 0.1em;
+          line-height: 2em;
+          margin-bottom: 20px;
+          border-bottom: 1px solid #ddd;
+        }
+
+// ↓投稿・登録フォーム
+        .form{
+          h1{
+            margin-bottom: 10px;
+            font-size: 24px;
+          }
+          p{
+            font-size: 16px;
+          }
+          &-info{
+            margin-bottom: 40px;
+          }
+          &-alert{
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 20px;
+          }
+
+          .form-title{
+            input{
+              width: 90%;
+              font-size: 16px;
+              padding: 6px;
+              border: 1px solid #ddd;
+              margin-bottom: 40px;
+            }
+
+            textarea{
+              width: 90%;
+              font-size: 16px;
+              padding: 6px;
+              resize: none;
+              border: 1px solid #ddd;
+            }
+          }
+
+          .form-content{
+            margin-bottom: 20px;
+
+            input{
+              width: 90%;
+              font-size: 16px;
+              padding: 6px;
+              border: 1px solid #ddd;
+              margin-bottom: 20px;
+            }
+
+            textarea{
+              width: 90%;
+              height: 200px;
+              font-size: 16px;
+              padding: 6px;
+              resize: none;
+              border: 1px solid #ddd;
+            }
+          }
+          .btn{
+              margin-top: 40px;
+              display: flex;
+              justify-content: center;
+              width: 100%;
+            input{
+              width: 100%;
+              height: 50px;
+            }
+          }
+        }
+        .posts-index-item{
+          display: block;
+          align-items: center;
+          margin-top: 20px;
+          border-bottom: 1px solid #ddd;
+          .post-left{
+            display: block;
+            margin-bottom: 10px;
+
+            img{
+              width: 30px;
+              height: 30px;
+              object-fit: contain;
+              border-radius: 50%;
+            }
+
+            .post-user-name{
+              padding-right: 0px;
+              margin-bottom: 10px;
+            }
+          }
+          a{
+            text-decoration: none;
+            color: #333;
+          }
+          p{
+            color: #666;
+            font-size: 12px;
+          }
+          li{
+            margin-bottom: 10px;
+          }
+        }
+        .form-error{
+          color: red;
         }
       }
     }
